@@ -149,7 +149,7 @@ backdoor-inheritance/
 │   └── baseline_<timestamp>/
 │       ├── metrics.csv
 │       ├── figures/
-│       └── checkpoints/
+│       
 │
 ├── requirements.txt
 └── README.md
@@ -179,8 +179,8 @@ Key observations:
 ## 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd backdoor-inheritance
+git clone https://github.com/Antisource/heronaisec.git
+cd heronaisec
 ```
 
 ---
@@ -233,7 +233,7 @@ results/
     ├── metrics.csv
     ├── figures/
     │   ├── persistence_curve.png
-    └── checkpoints/
+    
 ```
 
 ---
