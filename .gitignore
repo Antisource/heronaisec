@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*test.py
 
 # --- Virtual Environments ---
 .venv/
@@ -32,7 +33,6 @@ build/
 # --- Data / Results ---
 data/
 datasets/
-results/
 outputs/
 logs/
 *.log
