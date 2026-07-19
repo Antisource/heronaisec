@@ -1,0 +1,68 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual Environments ---
+.venv/
+env/
+venv/
+ENV/
+
+# --- Jupyter / Notebooks ---
+.ipynb_checkpoints/
+*.ipynb.json
+
+# --- VS Code ---
+.vscode/
+*.code-workspace
+
+# --- OS / Editor Files ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Build / Packaging ---
+*.egg-info/
+dist/
+build/
+
+# --- Data / Results ---
+data/
+datasets/
+results/
+outputs/
+logs/
+*.log
+
+# --- ML / DL Artifacts ---
+checkpoints/
+runs/              # TensorBoard logs
+*.ckpt             # PyTorch checkpoints
+*.pt               # PyTorch model files
+*.pth              # PyTorch weights
+*.h5               # Keras / TensorFlow models
+*.pb               # TensorFlow protobuf
+*.onnx             # ONNX models
+*.tflite           # TensorFlow Lite models
+
+# --- DVC ---
+# DVC keeps metadata in .dvc files, but large data/artifacts should be ignored
+*.dvc
+.cache/
+.dvc/cache/
+.dvc/tmp/
+
+# --- Research Artifacts ---
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.csv
+*.tsv
+
+# --- Misc ---
+*.bak
+*.tmp

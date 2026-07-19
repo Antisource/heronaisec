@@ -1,0 +1,86 @@
+# ============================================================================
+# Baseline Experiment Configuration
+# Project: Beyond Binary Evaluation of Backdoor Inheritance
+#
+# This file defines a single reproducible experiment.
+# Implementation details belong in Python code.
+# Scientific variables belong here.
+# ============================================================================
+
+experiment:
+  name: baseline
+  seed: 42
+  output_dir: results/
+  checkpoint_dir: checkpoints/
+
+# ----------------------------------------------------------------------------
+# Dataset
+# ----------------------------------------------------------------------------
+dataset:
+  name: glue
+  subset: sst2
+
+# ----------------------------------------------------------------------------
+# Model
+# ----------------------------------------------------------------------------
+model:
+  name: distilbert-base-uncased
+  num_labels: 2
+
+# ----------------------------------------------------------------------------
+# Backdoor Attack
+# ----------------------------------------------------------------------------
+attack:
+  type: badnet
+  trigger: "cf"
+  poison_rate: 0.15
+  target_label: 1
+
+# ----------------------------------------------------------------------------
+# Initial Backdoor Training
+# ----------------------------------------------------------------------------
+training:
+  epochs: 3
+  learning_rate: 2.0e-5
+  batch_size: 32
+  weight_decay: 0.01
+
+# ----------------------------------------------------------------------------
+# Progressive Clean Fine-Tuning
+# ----------------------------------------------------------------------------
+intervention:
+  clean_ratios:
+    - 0.0
+    - 0.2
+    - 0.4
+    - 0.6
+    - 0.8
+    - 1.0
+
+  epochs: 2
+
+# ----------------------------------------------------------------------------
+# Reviewer Intervention
+# ----------------------------------------------------------------------------
+reviewer:
+  enabled: true
+  checkpoint_ratio: 0.4
+  model: prajjwal1/bert-tiny
+  epochs: 2
+
+# ----------------------------------------------------------------------------
+# Evaluation
+# ----------------------------------------------------------------------------
+evaluation:
+  metrics:
+    - attack_success_rate
+    - clean_accuracy
+    - trigger_confidence
+    - retention_ratio
+
+# ----------------------------------------------------------------------------
+# Visualization
+# ----------------------------------------------------------------------------
+visualization:
+  save_figures: true
+  dpi: 300
